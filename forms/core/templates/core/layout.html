@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +8,18 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 </head>
 <body>
   <nav class="blue accent-4 lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Bem-vindo(a)</a></li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">SOBRE</a></li>
+        <li><a href="#">CONTATO</a></li>
+        <li><a href="#">BLOG</a></li>
       </ul>
       
       <!-- nao sei o que isso faz
@@ -40,7 +44,8 @@
 <!-- AQUI COMEÇA A PARTE QUE IMPORTA PARA O FORMULÁRIO -->
     <div class="container">
       <div class="col s12 m4 l8"> <!-- nao esta funcionando -->
-        <form action="/dados/" method="post">
+        <form method="post">
+          {% csrf_token %}
           <label for="nome">Nome: </label><br>
           <input id="nome" type="text" name="nome"><br>
 
@@ -67,27 +72,21 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          <h5 class="white-text">Sobre o Cognitivo.AI</h5>
+          <p class="grey-text text-lighten-4">Acreditamos no potencial que a inteligência artificial tem para transformar a vida das pessoas, estendendo as capacidades humanas. Por esse motivo, esse tipo de tecnologia e conhecimento deve ser acessível a todos. Fazemos isso tanto com os produtos da nossa plataforma, quanto pelo nosso programa: o Cognitivo School.</p>
 
 
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+          
           </ul>
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
+          <h5 class="white-text">Redes sociais</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            <li><a href="https://www.facebook.com/cognitivoai/" target="_blank"><img src="https://cognitivo.ai/img/icon-facebook.png" alt=”facebook”/></a></li>
+            <li><a href="https://twitter.com/cognitivoai" target="_blank"><img src="https://cognitivo.ai/img/icon-twitter.png" alt=”twitter”/></a></li>
+            <li><a href="https://www.linkedin.com/company/cognitivo.ai" target="_blank"><img src="https://cognitivo.ai/img/icon-linkedin.png" alt=”linkedin”/></a></li>
           </ul>
         </div>
       </div>
@@ -102,8 +101,8 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
 
   </body>
 </html>
