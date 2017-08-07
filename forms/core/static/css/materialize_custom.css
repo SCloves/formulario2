@@ -3,6 +3,7 @@
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+ 
 .materialize-red {
   background-color: #e51c23 !important;
 }
@@ -4954,7 +4955,7 @@ small {
   min-height: 48px;
   line-height: 1.5em;
   word-break: break-all;
-  background-color: #323232;
+  background-color: #ffc107;
   padding: 10px 25px;
   font-size: 1.1rem;
   font-weight: 300;
