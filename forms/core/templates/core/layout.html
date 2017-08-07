@@ -9,6 +9,7 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/materialize_custom.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 </head>
@@ -103,6 +104,12 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="{% static 'js/materialize.js' %}"></script>
   <script src="{% static 'js/init.js' %}"></script>
-
+  
+  {% if messages %}
+      {% for message in messages %}
+         <script type="text/javascript">// Materialize.toast(message, displayLength, className, completeCallback);
+         Materialize.toast('{{message}}', 5000) // 4000 is the duration of the toast</script>
+       {% endfor %}
+      {% endif %}
   </body>
 </html>
