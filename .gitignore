@@ -1,0 +1,6 @@
+db.sqlite3
+.form
+__pycache__
+*.pyc
+.env
+staticfiles
