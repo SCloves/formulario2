@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import PostForm
+from django.contrib import messages
 
 # Create your views here.
 
