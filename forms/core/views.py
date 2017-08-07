@@ -12,6 +12,8 @@ def formulario(request):
             post.email = request.POST['email']
             post.telefone = request.POST['telefone']
             post.save()
+            messages.success(
+            request, "Seus dados foram registrados. Em breve entraremos em contato.")
             return redirect('/')
     else:
         form = PostForm()
