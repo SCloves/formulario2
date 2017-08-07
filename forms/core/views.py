@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import PostForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -12,6 +13,8 @@ def formulario(request):
             post.email = request.POST['email']
             post.telefone = request.POST['telefone']
             post.save()
+            messages.success(
+            request, "Seus dados foram registrados. Em breve entraremos em contato.")
             return redirect('/')
     else:
         form = PostForm()
