@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import PostForm
 from django.contrib import messages
+from models import Formulario
+
 
 # Create your views here.
 
@@ -19,3 +21,9 @@ def formulario(request):
     else:
         form = PostForm()
     return render(request, 'core/layout.html', {'form': form})
+
+def lista_inscritos(request):
+    inscritos = Formulario.objects.all()
+    template_name = 'core/inscritos.html'
+    context = {'inscritos': inscritos}
+    return render(request, template_name, context)
