@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Cognitivo.AI</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/materialize_custom.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+</head>
+<body>
+  <nav class="blue accent-4 lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">SOBRE</a></li>
+        <li><a href="#">CONTATO</a></li>
+        <li><a href="#">BLOG</a></li>
+      </ul>
+      
+      <!-- nao sei o que isso faz
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      -->
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+{% block contend %}
+
+{% endblock contend %}
+
+  <footer class="page-footer blue accent-4 lighten-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Sobre o Cognitivo.AI</h5>
+          <p class="grey-text text-lighten-4">Acreditamos no potencial que a inteligência artificial tem para transformar a vida das pessoas, estendendo as capacidades humanas. Por esse motivo, esse tipo de tecnologia e conhecimento deve ser acessível a todos. Fazemos isso tanto com os produtos da nossa plataforma, quanto pelo nosso programa: o Cognitivo School.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Redes sociais</h5>
+          <ul>
+            <li><a href="https://www.facebook.com/cognitivoai/" target="_blank"><img src="https://cognitivo.ai/img/icon-facebook.png" alt=”facebook”/></a></li>
+            <li><a href="https://twitter.com/cognitivoai" target="_blank"><img src="https://cognitivo.ai/img/icon-twitter.png" alt=”twitter”/></a></li>
+            <li><a href="https://www.linkedin.com/company/cognitivo.ai" target="_blank"><img src="https://cognitivo.ai/img/icon-linkedin.png" alt=”linkedin”/></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+  
+  {% if messages %}
+      {% for message in messages %}
+         <script type="text/javascript">// Materialize.toast(message, displayLength, className, completeCallback);
+         Materialize.toast('{{message}}', 5000) // 4000 is the duration of the toast</script>
+       {% endfor %}
+      {% endif %}
+  </body>
+</html>
