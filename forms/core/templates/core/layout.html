@@ -44,17 +44,24 @@
 
 <!-- AQUI COMEÇA A PARTE QUE IMPORTA PARA O FORMULÁRIO -->
     <div class="container">
-      <div class="col s12 m4 l8"> <!-- nao esta funcionando -->
+      <div class="row">
         <form method="post">
           {% csrf_token %}
-          <label for="nome">Nome: </label><br>
-          <input id="nome" type="text" name="nome"><br>
+          
+          <div class="col s12">
+            <label for="nome">Nome: </label><br>
+            <input id="nome" type="text" name="nome"><br>
+          </div>
 
-          <label for="email">E-mail: </label><br>
-          <input id="email" type="text" name="email"><br>
+          <div class="col s6">
+            <label for="email">E-mail: </label><br>
+            <input id="email" type="text" name="email"><br>
+          </div>
 
-          <label for="telefone">Telefone: </label><br>
-          <input id="telefone" type="text" name="telefone"><br>
+          <div class="col s6">
+            <label for="telefone">Telefone: </label><br>
+            <input id="telefone" type="text" name="telefone"><br>
+          </div>
 
           <div class="center">
             <div href="http://materializecss.com/getting-started.html" class="btn-large waves-effect waves-light blue accent-4 lighten-1" id="download-button">
