@@ -14,9 +14,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from forms.core.views import formulario
+from forms.core.views import formulario, lista_inscritos, info_inscrito
 
 urlpatterns = [
 	url(r'^$', formulario),
+	url(r'^inscritos/$', lista_inscritos),
+	url(r'^inscrito/(?P<pk>\d+)/$', info_inscrito, name='info_inscrito'),
     url(r'^admin/', include(admin.site.urls)),
 ]

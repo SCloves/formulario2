@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import PostForm
 from django.contrib import messages
-from models import formulario
+from forms.core.models import Formulario
 
 # Create your views here.
 
@@ -26,4 +26,11 @@ def lista_inscritos(request):
     inscritos = Formulario.objects.all()
     template_name = 'core/inscritos.html'
     context = {'inscritos': inscritos}
+    return render(request, template_name, context)
+
+
+def info_inscrito(request, pk):
+    inscrito = get_object_or_404(Formulario, pk=pk)
+    template_name = 'core/info_inscrito.html'
+    context = {'inscrito': inscrito}
     return render(request, template_name, context)

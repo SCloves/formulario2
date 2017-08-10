@@ -9,7 +9,7 @@
     <ul>
 
     {% for inscrito in inscritos %}
-      <li>{{inscrito.nome}}</li><br>
+    <a href="{% url 'info_inscrito' pk=inscrito.pk %}"><li>{{inscrito.nome}}</li><br></a>
     {% endfor %}
     
     </ul>
