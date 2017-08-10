@@ -1,0 +1,20 @@
+{% extends 'core/base.html'%}
+
+
+{% block contend %}
+<div class="container">
+  <h4 class="header blue-text text-accent-4 text-lighten-1">Inscritos</h4>
+
+  <div>
+    <ul>
+
+    {% for inscrito in inscritos %}
+      <li>{{inscrito.nome}}</li><br>
+    {% endfor %}
+    
+    </ul>
+  </div>
+</div>
+
+{% endblock contend %}
+Contact GitHub API Training Shop Blog About
